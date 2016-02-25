@@ -7,6 +7,9 @@ Repository of dumb things Garry's Mod
 Can be worked around with something like `local GM = GM or GAMEMODE`
 
 > Meepen Ƹ̵̡Ӝ̵̨̄Ʒ: [you should] not do that
+> Zerf: please don't. like for real, don't
 
 #### Drawing a custom mesh with lighting requires rendering a model in the draw hook
 Source: https://facepunch.com/showthread.php?t=1456688&p=47356770&viewfull=1#post47356770
+
+#### SysTime() is more precise and accurate than os.clock() for benchmarking functions
