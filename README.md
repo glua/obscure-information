@@ -10,3 +10,11 @@ Can be worked around with something like `local GM = GM or GAMEMODE`
 
 #### Drawing a custom mesh with lighting requires rendering a model in the draw hook
 Source: https://facepunch.com/showthread.php?t=1456688&p=47356770&viewfull=1#post47356770
+
+#### If entity does not appear when rendering an entity manually, call `SetupBones` 
+For instance:
+```lua
+e:SetupBones()
+e:SetRenderOrigin(somepos)
+e:DrawModel()
+```
