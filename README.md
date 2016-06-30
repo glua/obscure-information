@@ -18,3 +18,7 @@ e:SetupBones()
 e:SetRenderOrigin(somepos)
 e:DrawModel()
 ```
+
+#### Pre/Post opaque/translucent hooks are each called twice per frame
+Namely once for 3d skybox entities, once after (see https://wiki.garrysmod.com/page/Render_Order).
+If you do something expensive in the hooks that only needs to be done once per frame, it might be worth it to return early in one of the passes.
