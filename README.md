@@ -23,6 +23,9 @@ e:DrawModel()
 Namely once for 3d skybox entities, once after (see https://wiki.garrysmod.com/page/Render_Order).
 If you do something expensive in the hooks that only needs to be done once per frame, it might be worth it to return early in one of the passes.
 
+#### Rendering custom stuff to a env_projectedtexture
+If you set the texture of env_projectedtexture to some string (eg. `myprojtex`), you can render to a RT clientside with same name to change what's displayed on the projectedtexture.
+
 #### HDR bloom/overexposure in RTs workaround
 Makes the rt look more like what you're actually drawing to it.
 ```lua
