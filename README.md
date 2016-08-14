@@ -43,5 +43,5 @@ Source: https://github.com/Facepunch/garrysmod-issues/issues/1511, https://facep
 
 You can load the material by using `surface.SetMaterial(mat)` anywhere on client.
 
-#### `SetDisabled` is placebo Garry code
+#### `Panel:SetDisabled` is placebo Garry code
 If you actually want to disable Panel functionality, use `Panel:SetEnabled(false)`.
