@@ -42,3 +42,6 @@ render.SetToneMappingScaleLinear(oldTMSL)
 Source: https://github.com/Facepunch/garrysmod-issues/issues/1511, https://facepunch.com/showthread.php?t=1374457&p=46073827&viewfull=1#post46073827
 
 You can load the material by using `surface.SetMaterial(mat)` anywhere on client.
+
+#### `SetDisabled` is placebo Garry code
+If you actually want to disable Panel functionality, use `Panel:SetEnabled(false)`.
