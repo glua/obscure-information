@@ -45,3 +45,33 @@ You can load the material by using `surface.SetMaterial(mat)` anywhere on client
 
 #### `Panel:SetDisabled` is placebo Garry code
 If you actually want to disable Panel functionality, use `Panel:SetEnabled(false)`.
+
+#### Creating a brush entity
+Source: https://facepunch.com/showthread.php?t=1529285&p=50927618&viewfull=1#post50927618
+Credits: wauterboi & rubat
+```lua
+AddCSLuaFile();
+
+ENT.Base  = "base_anim";
+ENT.Type  = "anim";
+
+ENT.RenderGroup = RENDERGROUP_TRANSLUCENT;
+
+function ENT:Initialize()
+  if (SERVER) then
+    self:SetMoveType(MOVETYPE_VPHYSICS);
+    self:SetSolid(SOLID_VPHYSICS);
+    self:SetModel(self.Model);
+  else
+    self:SetRenderBounds(self:OBBMins(), self:OBBMaxs());
+  end
+end
+
+function ENT:Draw()
+  self:DrawModel();
+end
+
+function ENT:KeyValue(key, value)
+  if (key == "model") then self.Model = value end
+end
+```
