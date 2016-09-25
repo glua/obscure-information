@@ -75,3 +75,7 @@ function ENT:KeyValue(key, value)
   if (key == "model") then self.Model = value end
 end
 ```
+
+#### RenderTarget name truncation  
+`GetRenderTarget` seems to truncate the name to x characters. If you experience render targets pointing to same buffer even with different names, try to shorten the used names to see if it's related to truncation.
+
