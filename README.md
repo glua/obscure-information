@@ -5,7 +5,8 @@ Repository of dumb things Garry's Mod
 
 ## General
 
-#### [Windows] [Client?] Using junction instead of symlink seems to work better for linking addon folder to an external folder  
+#### [Windows] [Client?] Use junction instead of symlink for addon folders  
+Seems to work better (ie. models in `addons/mylink/models` load when using junction but not when using a symlink).
 
 
 ## API
