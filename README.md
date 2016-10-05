@@ -3,6 +3,13 @@ Repository of dumb things Garry's Mod
 
 ----
 
+## General
+
+#### [Windows] [Client?] Using junction instead of symlink seems to work better for linking addon folder to an external folder  
+
+
+## API
+
 #### `GM` is available on first load, `GAMEMODE` on subsequent loads
 Can be worked around with something like `local GM = GM or GAMEMODE`
 
