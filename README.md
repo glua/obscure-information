@@ -87,3 +87,20 @@ end
 #### RenderTarget name truncation  
 `GetRenderTarget` seems to truncate the name to x characters. If you experience render targets pointing to same buffer even with different names, try to shorten the used names to see if it's related to truncation.
 
+#### Transparent rendertargets  
+Source: https://facepunch.com/showthread.php?t=1497293&p=49312072&viewfull=1#post49312072
+```lua
+local nm = "myrt"
+
+local rt = GetRenderTargetEx( nm, 512, 512, RT_SIZE_NO_CHANGE, MATERIAL_RT_DEPTH_NONE, 8, 4, IMAGE_FORMAT_RGBA8888 )
+render.PushRenderTarget(rt)
+render.OverrideAlphaWriteEnable( true, true )
+render.ClearDepth()
+render.Clear(0, 0, 0, 0)
+render.OverrideAlphaWriteEnable( false )
+render.PopRenderTarget()
+
+-- Note: specifying alphatest, vertexcolor in material constructor seems to be important
+local mat = CreateMaterial(nm, "VertexLitGeneric", {["$alphatest"] = "1", ["$vertexcolor"] = "1"})
+mat:SetTexture("$basetexture", rt)
+```
