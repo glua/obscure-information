@@ -104,3 +104,6 @@ render.PopRenderTarget()
 local mat = CreateMaterial(nm, "VertexLitGeneric", {["$alphatest"] = "1", ["$vertexcolor"] = "1"})
 mat:SetTexture("$basetexture", rt)
 ```
+
+#### NextBot animations  
+If using activities other than `ACT_WALK` or `ACT_RUN`, remember to edit BodyUpdate (https://github.com/garrynewman/garrysmod/blob/master/garrysmod/gamemodes/base/entities/entities/base_nextbot/sv_nextbot.lua#L64)
